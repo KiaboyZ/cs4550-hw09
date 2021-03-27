@@ -11,6 +11,7 @@ defmodule EventsAppWeb.Router do
 
   pipeline :api do
     plug :accepts, ["json"]
+    plug CORSPlug
   end
 
   scope "/", EventsAppWeb do
@@ -19,18 +20,16 @@ defmodule EventsAppWeb.Router do
     get "/", PageController, :index
   end
 
-  # Other scopes may use custom stacks.
-  # scope "/api", EventsAppWeb do
-  #   pipe_through :api
-  # end
+  scope "/api/v1", EventsAppWeb do
+    pipe_through :api
 
-  # Enables LiveDashboard only for development
-  #
-  # If you want to use the LiveDashboard in production, you should put
-  # it behind authentication and allow only admins to access it.
-  # If your application does not have an admins-only section yet,
-  # you can use Plug.BasicAuth to set up some basic authentication
-  # as long as you are also using SSL (which you should anyway).
+    resources "/users", UserController, except: [:new, :edit]
+    resources "/events", EventController, except: [:new, :edit]
+    resources "/comments", CommentController, except: [:new, :edit]
+    resources "/invites", InviteController, except: [:new, :edit]
+    resources "/session", SessionController, only: [:create]
+  end
+
   if Mix.env() in [:dev, :test] do
     import Phoenix.LiveDashboard.Router
 

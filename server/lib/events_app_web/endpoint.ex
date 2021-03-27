@@ -51,4 +51,6 @@ defmodule EventsAppWeb.Endpoint do
   plug Plug.Head
   plug Plug.Session, @session_options
   plug EventsAppWeb.Router
+  plug CORSPlug
+  plug Plug.MethodOverride
 end
