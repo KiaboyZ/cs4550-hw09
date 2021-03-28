@@ -6,6 +6,7 @@ import Feed from './Feed';
 import UsersList from './Users/List';
 import UsersNew from './Users/New';
 import EventsNew from './Events/New';
+import EventsList from './Events/List';
 
 function App() {
   return (
@@ -20,6 +21,9 @@ function App() {
         </Route>
         <Route path="/users/new">
           <UsersNew />
+        </Route>
+        <Route path="/events/list">
+          <EventsList />
         </Route>
         <Route path="/events/new">
           <EventsNew />

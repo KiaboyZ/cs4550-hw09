@@ -1,8 +1,8 @@
-import { Row, Col, Card } from 'react-bootstrap';
+import { Row, Col } from 'react-bootstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-function Feed({events}) {
+function EventsList({events}) {
   let rows = events.map((event) => (
     <tr key={event.id}>
       <td>{event.name}</td>
@@ -39,6 +39,11 @@ function Feed({events}) {
       </Row>
     </div>
   );
+
 }
 
-export default connect(({events}) => ({events}))(Feed);
+function state2props({events}) {
+  return { events };
+}
+
+export default connect(state2props)(EventsList);

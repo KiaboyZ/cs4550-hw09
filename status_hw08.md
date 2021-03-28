@@ -17,11 +17,11 @@ Answer the following questions:
 
 
 4. Is your app functionality complete? If not, what's missing?
-    ...
+    No. I still need invites to work and for some reason my buttons don't work.
 
 
 5. Is your app properly deployed? If not, what went wrong?
-    ...
+    No. I am bad at deployment.
 
 
 
