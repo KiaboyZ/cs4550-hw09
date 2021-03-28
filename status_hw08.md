@@ -13,7 +13,7 @@ Answer the following questions:
 
 
 3. What's the URL that you deployed to?
-    events.kia.town
+    events-spa.kia.town
 
 
 4. Is your app functionality complete? If not, what's missing?
